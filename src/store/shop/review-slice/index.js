@@ -10,7 +10,7 @@ export const addReview = createAsyncThunk(
   "/order/addReview",
   async (formData) => {
     const response = await axios.post(
-      "http://localhost:4000/api/shop/review/add",
+      "https://look-in-shop.vercel.app/api/shop/review/add",
         formData
     );
 
@@ -20,7 +20,7 @@ export const addReview = createAsyncThunk(
 
 export const getReviews = createAsyncThunk("/order/getReview", async (id) => {
   const response = await axios.get(
-    `http://localhost:4000/api/shop/review/get/${id}`
+    `https://look-in-shop.vercel.app/api/shop/review/get/${id}`
   );
 
   return response?.data;

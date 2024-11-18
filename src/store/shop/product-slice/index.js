@@ -16,7 +16,7 @@ export const fetchAllFilteredProducts = createAsyncThunk(
     });
 
     const result = await axios.get(
-      `http://localhost:4000/api/shop/products/get?${query}`
+      `https://look-in-shop.vercel.app/api/shop/products/get?${query}`
     );
 
     return result?.data;
@@ -27,7 +27,7 @@ export const fetchProductDetails = createAsyncThunk(
   "/products/fetchProductDetails",
   async (id) => {
     const result = await axios.get(
-      `http://localhost:4000/api/shop/products/get/${id}`
+      `https://look-in-shop.vercel.app/api/shop/products/get/${id}`
     );
 
     return result?.data;

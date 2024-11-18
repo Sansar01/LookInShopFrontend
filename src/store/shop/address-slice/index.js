@@ -11,7 +11,7 @@ export const addNewAddress = createAsyncThunk(
   async (formData) => {
       
     const response = await axios.post(
-      "http://localhost:4000/api/shop/address/add",
+      "https://look-in-shop.vercel.app/api/shop/address/add",
       formData
     );
 
@@ -24,7 +24,7 @@ export const fetchAllAddress = createAsyncThunk(
     async ({userId}) => {
       
       const response = await axios.get(
-        `http://localhost:4000/api/shop/address/get/${userId}`
+        `https://look-in-shop.vercel.app/api/shop/address/get/${userId}`
       );
   
       return response?.data;
@@ -35,7 +35,7 @@ export const fetchAllAddress = createAsyncThunk(
     "/addresses/editAddress",
     async ({userId,addressId,formData}) => {
       const response = await axios.put(
-        `http://localhost:4000/api/shop/address/update/${userId}/${addressId}`,
+        `https://look-in-shop.vercel.app/api/shop/address/update/${userId}/${addressId}`,
         formData
       );
   
@@ -49,7 +49,7 @@ export const fetchAllAddress = createAsyncThunk(
       console.log("id ",userId,addressId);
       
       const response = await axios.delete(
-        `http://localhost:4000/api/shop/address/delete/${userId}/${addressId}`);
+        `https://look-in-shop.vercel.app/api/shop/address/delete/${userId}/${addressId}`);
   
       return response?.data;
     }

@@ -10,7 +10,7 @@ const initialState = {
   "/products/addnewProduct",
   async (formData) => {
     const response = await axios.post(
-      "http://localhost:4000/api/admin/products/add",
+      "https://look-in-shop.vercel.app/api/admin/products/add",
       formData
     );
 
@@ -22,7 +22,7 @@ export const fetchAllProducts = createAsyncThunk(
   "/products/fetchallProduct",
   async () => {
     const response = await axios.get(
-      "http://localhost:4000/api/admin/products/get"
+      "https://look-in-shop.vercel.app/api/admin/products/get"
     );
 
     return response?.data;
@@ -33,7 +33,7 @@ export const editProduct = createAsyncThunk(
   "/products/editProduct",
   async ({ id, formData }) => {
     const response = await axios.put(
-      `http://localhost:4000/api/admin/products/edit/${id}`,
+      `https://look-in-shop.vercel.app/api/admin/products/edit/${id}`,
       formData
     );
 
@@ -45,7 +45,7 @@ export const deleteProduct = createAsyncThunk(
   "/products/deleteProduct",
   async (id) => {
     const response = await axios.delete(
-      `http://localhost:4000/api/admin/products/delete/${id}`
+      `https://look-in-shop.vercel.app/api/admin/products/delete/${id}`
     );
 
     return response?.data;

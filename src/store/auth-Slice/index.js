@@ -42,7 +42,7 @@ export const logoutUser = createAsyncThunk("/auth/logout", async () => {
   return response.data;
 });
 
-export const checkAuth = createAsyncThunk("/auth/checkauth", async () => {
+export const checkAuthentication = createAsyncThunk("/auth/checkauth", async () => {
   const response = await axios.get(
     "https://look-in-shop.vercel.app/api/auth/checkauth",
     {
@@ -94,15 +94,15 @@ const authSlice = createSlice({
         state.user = null;
         state.isAuthenticated = false;
       })
-      .addCase(checkAuth.pending, (state) => {
+      .addCase(checkAuthentication.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(checkAuth.fulfilled, (state, action) => {
+      .addCase(checkAuthentication.fulfilled, (state, action) => {
         state.isLoading = false;
         state.user = action.payload.success ? action.payload.user : null;
         state.isAuthenticated = action.payload.success;
       })
-      .addCase(checkAuth.rejected, (state) => {
+      .addCase(checkAuthentication.rejected, (state) => {
         state.isLoading = false;
         state.user = null;
         state.isAuthenticated = false;

@@ -18,7 +18,7 @@ import UnAuth from "./pages/UnAuth/UnAuth";
 import { useDispatch, useSelector } from "react-redux";
 import { Skeleton } from "@/components/ui/skeleton"
 import { useEffect } from "react";
-import { checkAuth } from "./store/auth-Slice";
+import { checkAuthentication } from "./store/auth-Slice";
 import Paypalreturn from "./pages/Shopping-View/Paypalreturn";
 import PaymentSuccess from "./pages/Shopping-View/PaymentSuccess";
 import Search from "./pages/Shopping-View/Search";
@@ -30,7 +30,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(checkAuth());
+    dispatch(checkAuthentication());
   }, [dispatch]);
 
   if (isLoading) return <Skeleton className="w-[800] bg-black h-[600px]" />;

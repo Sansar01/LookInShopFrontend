@@ -53,7 +53,7 @@ export const checkAuthentication = createAsyncThunk("/auth/checkauth", async () 
       },
     }
   );
-  return response.data;
+  return response?.data;
 });
 
 const authSlice = createSlice({

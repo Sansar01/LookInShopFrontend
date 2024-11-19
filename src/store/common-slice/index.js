@@ -10,7 +10,10 @@ export const getFeatureImages = createAsyncThunk(
   "/order/getFeatureImages",
   async () => {
     const response = await axios.get(
-      `https://look-in-shop.vercel.app/api/common/feature/get`
+      'https://look-in-shop.vercel.app/api/common/feature/get',
+      {
+        withCredentials: true,
+      }
     );
 
     return response.data;
@@ -22,7 +25,10 @@ export const addFeatureImage = createAsyncThunk(
   async (image) => {
     const response = await axios.post(
       `https://look-in-shop.vercel.app/api/common/feature/add`,
-      { image }
+      { image },
+      {
+        withCredentials: true,
+      }
     );
 
     return response.data;

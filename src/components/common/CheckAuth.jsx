@@ -1,4 +1,6 @@
+import { getFeatureImages } from "@/store/common-slice";
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Navigate, useLocation } from "react-router-dom";
 
 function CheckAuth({ isAuthenticated, user, children }) {

@@ -27,6 +27,7 @@ import ShoppingProductTile from "@/components/Shopping-View/ShoppingProductTile"
 import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
+import { getFeatureImages } from "@/store/common-slice";
 
 const categoriesWithIcon = [
   { id: "men", label: "Men", icon: ShirtIcon },
@@ -56,6 +57,10 @@ function Home() {
   const navigate = useNavigate();
 
   const { featureImageList } = useSelector((state) => state.commonFeature);
+
+  useEffect(()=>{
+    dispatch(getFeatureImages())
+  },[dispatch])
 
   useEffect(() => {
     const timer = setInterval(() => {
